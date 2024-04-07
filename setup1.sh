@@ -1,16 +1,10 @@
 #!bin/bash
-
+# command: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/setup1.sh | bash
 #update
 sudo apt update && sudo apt dist-upgrade -y
 
 #useful variable
 usr=$(whoami)
-
-#useful installation
-which curl 2>&1 /dev/null
-if [ $? -eq 0 ]; then
-    sudo apt install curl 2>&1 /dev/null
-fi
 
 #configure bashrc
 curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/bashcon.txt >> /home/$usr/.bashrc

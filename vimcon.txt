@@ -1,0 +1,59 @@
+set nocompatible
+
+filetype off
+
+syntax on
+
+filetype plugin indent on
+
+set modelines=0
+
+" Automatically wrap text that extends beyond the screen length.
+set wrap
+" Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
+
+" set textwidth=79
+set formatoptions=tcqrn1
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+set scrolloff=5
+set backspace=indent,eol,start
+
+set ttyfast
+
+set laststatus=2
+
+set showmode
+set showcmd
+
+set matchpairs+=<:>
+
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+
+set number
+
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+
+set encoding=utf-8
+
+set hlsearch
+set incsearch
+set smartcase
+
+set viminfo='100,<9999,s100
+
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+if filereadable(expand("~/.vimrc.plug"))
+    source ~/.vimrc.plug
+endif
+

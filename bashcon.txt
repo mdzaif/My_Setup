@@ -9,7 +9,7 @@ alias doc='cd Documents'
 alias down='cd Downloads'
 alias update='sudo apt udpate && sudo apt dist-upgrade'
 alias gcol='git clone'
-alias gpus='git branch -M main && git push -u origin main"
+alias gpus='git branch -M main && git push -u origin main'
 alias gstat='git status'
 alias cat='cat -n'
 #some functions
@@ -25,11 +25,11 @@ crun() {
 	if [ -f "$sou_file" ]; then
 			gcc -o "$out_exe" "$sou_file" 
 			time ./$1
-	fi
 
 	else 
 		echo "File not found!"
 		return 1;
+  fi
 }
 
 cpp() {
@@ -45,11 +45,11 @@ cpp() {
     			#g++ -o "$output_executable" "$source_file" -lglut -lGL -lGLU -lGLEW -lglfw -lm
 				g++ -o "$output_executable" "$source_file" -lm
     			time ./$1
-    fi
 
     else
     	echo "File not found!"
     	return 1;
+    fi
 }
 
 

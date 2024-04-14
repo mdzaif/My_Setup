@@ -1,0 +1,14 @@
+#Description: turn of screen in non-gui
+#For: Debian, Ubuntu, Linux Mint
+
+#Install vbetool
+sudo apt install vbetool
+
+#on the screen
+sudo vbetool dpms on
+
+#off the screen
+sudo vbetool dpms off
+
+------------------
+###END

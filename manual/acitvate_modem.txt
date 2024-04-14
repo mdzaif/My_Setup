@@ -1,0 +1,5 @@
+#Description: Use of modem manager gui
+#For: Debain, Ubuntu, Linux Mint
+
+#Install modem-manager-gui
+sudo apt install modem-manager-gui

@@ -11,7 +11,6 @@ alias update='sudo apt udpate && sudo apt dist-upgrade'
 alias gcol='git clone'
 alias gpus='git branch -M main && git push -u origin main'
 alias gstat='git status'
-alias cat='cat -n'
 #some functions
 crun() {
 	if [ $# -lt 1 ]; then

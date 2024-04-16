@@ -1,11 +1,7 @@
 set nocompatible
-
 filetype off
-
 syntax on
-
 filetype plugin indent on
-
 set modelines=0
 
 " Automatically wrap text that extends beyond the screen length.
@@ -48,7 +44,36 @@ set hlsearch
 set incsearch
 set smartcase
 
-set viminfo='100,<9999,s100
+set viminfo='100,<9999,s100'
 
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Automatically closing braces
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+inoremap [<CR> [<CR>]<Esc>ko<tab>
+inoremap (<CR> (<CR>)<Esc>ko<tab>
+
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
+
+" Vim-Plug configuration
+call plug#begin('~/.vim/plugged')
+" YouCompleteMe and UltiSnips plugins
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+
+" List your plugins here
+" C/C++ plugins
+Plug 'vim-airline/vim-airline'
+Plug 'Valloric/YouCompleteMe'
+
+" Python plugins
+Plug 'klen/python-mode'
+Plug 'davidhalter/jedi-vim'
+
+" Shell script plugins
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+call plug#end()

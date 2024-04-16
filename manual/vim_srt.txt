@@ -1,0 +1,85 @@
+exit vim:
+:q
+
+start typing:
+press I from keyboard.
+
+typing mode with append mode:
+Shift + A
+
+to stop typing mode and go back to normal mode:
+press Esc from keyboard.
+
+exit vim without saving the file:
+:q!
+** ! use for force quit.
+
+exit + save the file:
+:wq!
+
+Undo:
+Press U from the keyboard.(normal mode)
+
+Delete a character:
+Press X from the keyboard.(normal mode)
+
+Delete a line:
+Press DD from the keyboard.(normal mode)
+
+moving cursor (h,j,k,l) method:
+h: left, j: down, k: top, l: right.
+
+read and attach the file content:
+:r <file_name_with_path>
+
+File content save in new file:
+:w <give_a_file_name>
+
+run the command inside the vim:
+:! <type the terminal command>
+
+open file:
+:e <file_name>
+
+create file:
+:enew
+:w <give_file_name> = for new file save.
+
+navigate files:
+:bn = use for buffer next
+:bp = use for buffer previous
+:bd = to close the file
+:badd = to open a file without being noticed
+select copy paste:
+naviagte cursor in normal mode then press V for visual mode. After that press arrow keys to select the area.
+for copy the selected area press Y from the keyboard. then go the paste area by arrow keys then press P from the keyboard.
+
+To delete selected area: first go the visual mode then select area. Now press C to delete.
+
+sort the line with alphabetic order: go visual mode(press V) then select area. then press in command> :sort ui
+there will add the range before the sort ui automatically.
+
+Find the word and relpace:
+:%s/<word>/<replace_word>/g
+
+Move at begin and at end of the file:
+GG = at the begin of the file(normal mode)
+Shift+G = at end of the file(normal mode)'
+
+open file with split:
+horizontal split:
+:split <file_name>
+or :sp <file_name>
+
+vertical split:
+:vsplit <file_name>
+or :vs <file_name>
+for navigate: Ctrl+ww
+
+open from specific line of the file:
+vim +line_number <file_name> (in bash shell)
+
+bash command:
+vim -o <file_names>  = use for open files wih horizontal split
+vim -O <file_names> = use for open files with vertical split
+suggestion Ctrl+N

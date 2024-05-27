@@ -1,0 +1,33 @@
+# WordPress site in localhost with XAMPP (Linux)
+----------------------------------------------------
+
+1. first create the installer.php and archive file(zip file) of your wordpress site with Duplicator plugin.
+
+2. Now download those files in your local system.
+
+3. Now create a directory in '/opt/lampp/htdocs/'. Suggestion: please set the directory name as your site name.
+
+4.Now move two files (installer and archive files) into that directory.'/opt/lampp/htdocs/<your_directory>'
+
+5. Set permission: sudo chmod 777 <your_directory>. also assure that your directory's content also have the same permission.
+
+6. Open web browser type: localhost/phpmyadmin to create a database for your wordpress site. just only create a default database. and leave it empty.
+
+7. Now type in web browser: localhost/<you_directory>/installer.php
+
+8. It will open a validation sectoin if you done pervious setps perfectly.
+
+9. Now set fill the Databse name section (previously created database name) and user section will be root. Other sections are empty(that  means default)
+
+10. validate it and accept the terms and condition and intall it.
+
+11. After install click the Admin login (top-left), after login successfully you are ready to use your site in locally.
+
+Prerequisite:
+
+## XAMPP installed in your system
+
+## Wordpress installed in your system.
+
+---------------------------------
+#END

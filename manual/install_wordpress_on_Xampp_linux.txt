@@ -1,0 +1,39 @@
+## Wordpress on XAMPP (Linux)
+--------------------------------------
+
+1. Download the wordpress: https://wordpress.org/
+
+2. Now access the phpmyadmin: to create the database.
+
+3. Extract the Downloaded wordpress file(in zip file) into the /opt/lampp/htdocs.
+
+4. Then sudo mv wp-config-sample.php wp-config.php
+
+5. sudo vim wp-config.php and edit this line:
+
+      define('DB_NAME', '<your_database_name>');
+      define('DB_USER', 'root');
+      define('DB_PASSWORD', '');
+      define('DB_HOST', 'localhost');
+save and exit the vim. or any text editor you like.
+
+6. Go web browser type: http://localhost/wordpress
+
+7. Follow the on-screen instructions to complete the installation.
+
+    in short: at Welcome screen:
+    # Give a site title.
+    # set a user name. for example: admin
+    # set easy password. because it is in local.
+    # set a email.
+    # You don't need the check the checkbox.
+    # Now isntall it.
+
+8. After installation visit: http://localhost/wordpress/wp-admin
+
+Prerequisite:
+
+## XAMPP installed in your system.
+
+---------------------------------------
+#END

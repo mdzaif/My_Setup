@@ -1,5 +1,5 @@
 #!bin/bash
-# command: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/setup1.sh | bash
+# command: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/setup.sh | bash
 
 # Update
 sudo apt update && sudo apt dist-upgrade -y

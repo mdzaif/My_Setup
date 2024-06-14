@@ -13,5 +13,10 @@ sudo passwd zaifmahi
 #Set user to the sudo group
 sudo usermod -aG sudo zaifmahi
 
-echo "process complete"
+if [ $? -eq 0 ]; then
+	echo "process complete"
+else
+	echo "process failed"
+fi
+
 

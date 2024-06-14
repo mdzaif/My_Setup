@@ -1,0 +1,38 @@
+## Description: Setup SSH key for GitHub authentication.
+
+# Generate SSH key
+ssh-keygen -t ed25519 -C "type the key name"
+
+# Check the public key
+cat ~/.ssh/key_name.pub
+
+--> copy the whole output
+
+--> Visit the Github account settings and go to the "SSH and GPG keys" section
+
+--> In SSH keys section add the new ssh key just give a random title you want and paste the copied public key
+    save it. all done here.
+
+# Confilct Of multiple SSH keys
+
+--> If multiple ssh key are save for different devices then follow those steps:
+
+# create a 'config' file in .ssh directory
+then copy paste those line:
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+
+
+# Now check the connection
+ssh -T git@github.com
+
+the output looks like
+Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
+
+Your all setup!
+
+-----------------------------
+##end

@@ -1,0 +1,45 @@
+### Docker commands 
+
+
+# pull docker images
+docker pull <images_name>
+
+# run container
+docker run <image_name>
+
+# check the running process
+docker ps
+
+# check the all process
+docker ps -a
+
+# list all docker images
+docker images
+
+# remove docker image
+docker rmi <image_name>
+
+# remove the docker container
+docker rm <container_id>
+
+# run images in interactive mode
+docker run -it <image_name>
+
+# running docker container in background
+docker run -it <give_name_for_container> -d <image_name>
+
+--> execute the image
+docker exec -it <name_of_container> command # to find the command name run ps -a
+
+--> stop the container
+docker stop <container_name> # also container id 
+
+# Bulid image from the docker file
+--> first create a Dockerfile 
+--> from terminal go to that directory
+docker build -t <give_a_tag_name_must_be_lowercase> .
+--> run this image
+docker run <tag_name> # tag name actually the image name for better understand
+
+docker run --name <give_a_container_name> <tag_name> # if wish to give a container name
+

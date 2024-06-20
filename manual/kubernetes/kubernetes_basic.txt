@@ -1,0 +1,43 @@
+# Kubernetes architecture:
+
+Master Node:
+--> API server:
+// Main gateway to access
+// Central component of control plane
+//Exposing APIs for user to k8s cluster interaction
+//kubctl or web UIs use to interact with API server
+//For validating request
+
+--> Scheduler:
+//scheduling pods on nodes
+//schedular select node for the pods to run on
+// based on config, and hardware requirements of pod, scheduler decides which node to use
+
+--> Control Manager:
+kube control-manager: if any node fails or unavailable it inform the report to master node for necessary action
+
+//Node Controller: Monitor nodes
+//Replication Controller: Maintains the correct replica count(mulitple replica of a pod)
+//Service COntroller: Make sure all the services are properly configured
+//Endpint Controller: Endpoints are properly configured
+
+
+--> ETCD
+//sotred logs 
+// work as a database (key_value)
+
+Working Node
+
+--> Kubelet:
+// run on each work node for managing the state of pods running on that node.
+// kublet uses podspecs to create tand manage pods on the node
+//PodSpecs is defined in JSON or YAML file
+//Also makes sure container are running on pods
+
+--> Kubeproxy:
+//managing the networking aspect of cluster
+//network config and rules
+
+--> Container Runtime:
+// work for running container( it is a software)
+

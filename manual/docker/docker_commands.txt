@@ -43,3 +43,18 @@ docker run <tag_name> # tag name actually the image name for better understand
 
 docker run --name <give_a_container_name> <tag_name> # if wish to give a container name
 
+# Push the docker image in th docker hub
+--> First create an image: docker build -t <image_name_you_want> .
+--> Now use proper format for image: docker tag <image_name> <user_name_docker_hub>/<image_name>:<version_of_image>
+--> login docker: docker login
+--> push the image: docker push <user_name>/<image_name>:<version_of_image>
+
+## Docker compose 
+
+# bulid compose after create yaml file
+docker-compose up
+
+
+--> more details: https://docs.docker.com/compose/
+--> also: https://www.linode.com/docs/guides/how-to-use-docker-compose/
+

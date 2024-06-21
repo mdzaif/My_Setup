@@ -1,0 +1,13 @@
+# kubernetes services
+
+In Kubernetes, a service is an abstraction layer that enables communication between different components or applications running within acluster. It provides a stable network endpoint for accessing the applications and ensures that they can reliably discover and commuincate with each other, regardless of their location or changes in the cluster.
+
+--> Labels and Selectors: Kubernetes introduces labels, which are key-value pairs attached to objects like Pods, to identify and organize them. Selectors are used to query and filter objects based on their labels. Services use labels and selectors to define the group of Pods they should trget for load balancing and routing. 
+
+--> ClusterIP: this the default type of service in kubernetes. It exposes the service on a cluster-internal IP address that is only reachable from within the cluster. It enbles communication between different pods within the same cluster. An example could be database service that should only be accessed by other services within the cluster.
+
+--> NodePort: This type of serivce exposes the service on a static port on each node in the cluster. It allows external access to the service by mapping the node port to the service port. For example, if you have a web application running on port 8080 in your cluster, a NOdePort service can expose it on a specific (e.g. 3000)),a nd you can access the application using th eIP address of any node int he cluster with the specified port(e.g., http://<node-ip>:30000).
+
+--> LoadBalancer: This service type assigns an external IP address (usually provided by a cloud provider's load balancer) to the service. It distributes the incoming traffic across multiple pods. LoadBalancer services are commonly used when you want to expose your application to the internet. For instance, if you have a web application, a LoadBalancer service can distribute the incoming web requests across multiple pods running the application providing scalability and redundancy.
+
+--> ExternalName: This type of service is used to provide an alias or redirect to an external service outside of the cluster. It allows you to use a Kubernetes services to refer to an external service by its DNS name. For example, you can create an ExternalName service called "my-external-service" that points to "external-service.example.com", and any requests "my_external-sevice" will be redirected to "external-service.example.com"

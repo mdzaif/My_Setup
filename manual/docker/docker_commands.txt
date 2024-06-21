@@ -58,3 +58,10 @@ docker-compose up
 --> more details: https://docs.docker.com/compose/
 --> also: https://www.linode.com/docs/guides/how-to-use-docker-compose/
 
+ref: 
+1. https://github.com/docker/compose/tree/main/docs/reference
+
+2. https://docs.docker.com/compose/multiple-compose-files/extends/
+
+3. https://www.okteto.com/docs/1.17/reference/docker-compose/
+

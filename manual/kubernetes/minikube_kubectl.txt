@@ -1,1 +1,10 @@
-#content
+## YAML basics in kubernetes
+manual for kubernetes: https://developer.ibm.com/tutorials/yaml-basics-and-usage-in-kubernetes/
+yaml file generator: https://k8syaml.com/
+
+
+## minikube commands
+manuals for minikube: https://minikube.sigs.k8s.io/docs/commands/
+
+## kubectl commands
+ref: https://kubernetes.io/docs/reference/kubectl/

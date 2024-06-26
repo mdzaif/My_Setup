@@ -8,3 +8,9 @@ manuals for minikube: https://minikube.sigs.k8s.io/docs/commands/
 
 ## kubectl commands
 ref: https://kubernetes.io/docs/reference/kubectl/
+
+## kubernetes documentation:
+https://kubernetes.io/docs/home/
+
+-------------
+#end

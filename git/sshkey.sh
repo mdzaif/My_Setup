@@ -1,3 +1,6 @@
+#!/bin/bash
+#description: create SSH Key
+# run: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/git/sshkey.sh | bash
 read -p "Comment: " key_comment
 folder='/home/'$(whoami)'/.ssh/'
 read -p "File name: " file

@@ -1,6 +1,5 @@
 #!/bin/bash
 # For bootstrap setup
-
 # install the git
 which git > /dev/null
 
@@ -15,6 +14,3 @@ read -p "User name: " usr
 read -p "Email:  " email
 git config --global user.name "$usr" && git config --global user.email "$email"
 git config --list
-
-# ssh key generation
-curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/git/sshkey.sh | bash

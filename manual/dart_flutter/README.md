@@ -58,7 +58,7 @@ curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutt
 ## Last Steps
 
 ```bash
-flutter config --android-sdk /home/zaifmahi/Android/sdk
+flutter config --android-sdk ~/Android/sdk
 ```
 ```bash
 flutter doctor --android-licenses

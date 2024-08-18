@@ -1,0 +1,11 @@
+[Desktop Entry]
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Android Studio
+Exec=/home/$user/android-studio/bin/studio.sh
+Icon=/home/$user/android-studio/bin/studio.png
+Terminal=false
+StartupNotify=true
+Comment=Android IDE
+Categories=Development;IDE;

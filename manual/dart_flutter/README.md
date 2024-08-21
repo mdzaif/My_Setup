@@ -64,6 +64,41 @@ flutter config --android-sdk ~/Android/sdk
 flutter doctor --android-licenses
 ```
 
+## Connect Your Android phone while development (wireless + linux):
+
+Following those commands:
+
+```bash
+sudo apt update && sudo apt install adb # if adb is not installed in your linux machine
+```
+
+Now, go to your android phone settings > Developer Options > allow the Wireless debuging. Now, open the wireless debugging section > pair device with pairing code.•
+
+```bash
+adb pair <ip_address>:port_number # from pop up
+```
+It will need the pairing code so enter your pairing code. Now, close the pop up of pair device with pairing code. You will also see "IP address & Port" section.
+
+```bash
+adb connect <ip_adress>:port_number # from IP addresss & Port section
+```
+
+Check the connection with adb command:
+
+```bash
+adb devices
+```
+Also, with flutter command:
+
+```bash
+flutter devices
+```
+Check the debug mode is working:
+
+```bash
+flutter run
+```
+
 ## References:
 
 1. <a href='https://docs.flutter.dev/get-started/install'> Flutter Download </a><br>

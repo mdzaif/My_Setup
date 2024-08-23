@@ -49,11 +49,8 @@ flutter doctor -v # test the installation
 <b>Create Desktop Entry For Android Studio</b>
 
 ```bash
-curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutter/android-studio.desktop.entry >> ~/.local/share/applications/android-studio.desktop
+curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutter/android-studio.desktop.entry >> ~/.local/share/applications/android-studio.desktop && u=$(whoami) && sed -i "s/user/${u}/g" ~/.local/share/applications/android-studio.desktop
 ```
-
- <p>naviagtae that path:
- <b>~/.local/share/applications/</b> open the android-studio.desktop with text editor change the $user to your user name. </p>
 
 ## Last Steps
 

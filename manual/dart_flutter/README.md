@@ -49,7 +49,7 @@ flutter doctor -v # test the installation
 <b>Create Desktop Entry For Android Studio</b>
 
 ```bash
-curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutter/android-studio.desktop.entry >> ~/.local/share/applications/android-studio.desktop && u=$(whoami) && sed -i "s/user/${u}/g" ~/.local/share/applications/android-studio.desktop
+curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutter/android-studio.desktop.entry > ~/.local/share/applications/android-studio.desktop && u=$(whoami) && sed -i "s/user/${u}/g" ~/.local/share/applications/android-studio.desktop
 ```
 
 ## Last Steps
@@ -105,3 +105,5 @@ flutter run
 3. <a href='https://developer.android.com/studio/index.html'> Android Studio Documentation</a><br>
 
 4. <a href='https://dart.dev/language'> Dart Documentation </a>
+
+5. <a href='https://pub.dev/'> Flutter Package Repositories</a>

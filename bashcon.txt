@@ -2,7 +2,7 @@
 alias time='/usr/bin/time -f"---------------\n---------------\nJob %C\nCPU Percentage %P\nReal Time %es\nUser Time %Us\nSystem Time %Ss\nExit Status %x\n---------------\n---------------" '
 alias wt='curl wttr.in'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
-alias info="curl -s https://raw.githubusercontent.com/mdzaif/Shell_For_Fun/main/sys_info.sh | bash" 
+alias info="curl -s https://raw.githubusercontent.com/mdzaif/Shell_Scripting/main/sys_info.sh | bash" 
 alias ssha='eval $(ssh-agent) && ssh-add'
 alias ssh_key='ssh-keygen -t ed25519 -C'
 alias doc='cd Documents'
@@ -12,7 +12,7 @@ alias gcol='git clone'
 alias gpus='git branch -M main && git push -u origin main'
 alias gstat='git status'
 alias pyrun='time python3'
-
+alias upd='curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/update.sh | bash'
 #some functions
 crun() {
 	if [ $# -lt 1 ]; then

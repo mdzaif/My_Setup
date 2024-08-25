@@ -9,3 +9,10 @@ sudo curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/git/git_conf
 ```bash
 sudo curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/git/sshkey.sh > /tmp/sshkey.sh && sudo chmod +x /tmp/sshkey.sh &&  /tmp/./sshkey.sh && sudo rm -v /tmp/sshkey.sh
 ```
+
+### Create config
+
+```bash
+ sudo curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/git/config > ~/.ssh/config # change the multi & multi*
+```
+

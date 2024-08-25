@@ -1,0 +1,11 @@
+# default
+
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/default_secret_key
+
+# multi
+Host github-multi
+  HostName github.com
+  IdentityFile ~/.ssh/multi_secret_key
+

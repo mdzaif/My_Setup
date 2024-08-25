@@ -1,8 +1,8 @@
-#!bin/bash
+#!/bin/bash
 # command: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/setup.sh | bash
 
 # Update
-sudo apt update && sudo apt dist-upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # Find user
 usr=$(whoami)

@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 #command: curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/setup_user.sh | bash
 
 #admin account

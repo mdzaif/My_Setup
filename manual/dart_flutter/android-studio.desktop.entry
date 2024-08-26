@@ -3,8 +3,8 @@
 Version=1.0
 Type=Application
 Name=Android Studio
-Exec=/home/user/android-studio/bin/studio.sh
-Icon=/home/user/android-studio/bin/studio.png
+Exec=/home/user/development/android-studio/bin/studio.sh
+Icon=/home/user/development/android-studio/bin/studio.png
 Terminal=false
 StartupNotify=true
 Comment=Android IDE

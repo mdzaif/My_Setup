@@ -11,12 +11,17 @@
 ## Extract the Dowloaded Files:
 
 <b>Flutter</b>
+
 ```bash
-tar xf Downloads/flutter_linux_3.24.0-stable.tar.xz -C ~
+mkdir development  # create a development directory and navigate on it
+```
+
+```bash
+tar xf ~/Downloads/<flutter.tar.gz_file> -C ~/development/
 ```
 <b>Android Studio</b>
 ```bash
-tar xf Download/android-studio-2024.1.1.13-linux.tar.gz -C ~
+tar xf ~/Download/<android.tar.gz_file> -C ~/developement
 ```
 
 ## Setup Process
@@ -28,7 +33,11 @@ sudo apt install clang cmake ninja-build libgtk-3-dev
 <b>Export The Flutter Path</b>
 
 ```bash
-export PATH="$PATH:`pwd`/flutter/bin" >> .bashrc && soruce .bashrc
+cd development # navigate development directory
+```
+
+```bash
+echo "export PATH=\"$PATH:`pwd`/flutter/bin\"" >> ~/.bashrc && source ~/.bashrc # change user to your user name and make sure you extract your tar.gz files on development directroy 
 ```
 
 <b>Test The Install</b>
@@ -55,7 +64,7 @@ curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/manual/dart_flutt
 ## Last Steps
 
 ```bash
-flutter config --android-sdk ~/Android/sdk
+flutter config --android-sdk ~/development/Android/Sdk
 ```
 ```bash
 flutter doctor --android-licenses

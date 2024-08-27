@@ -7,6 +7,10 @@ sudo apt update && sudo apt upgrade -y
 # Find user
 usr=$(whoami)
 
+echo "User: $usr"
+echo "Take 10 sec. to start the process, if you want to stop the process press Ctrl+C"
+sleep 10
+echo "Start the process...."
 # Configure bash
 curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/bashcon.txt >> /home/$usr/.bashrc
 if [ $? -eq 0 ]; then
@@ -19,7 +23,6 @@ if [ $? -eq 0 ]; then
 	echo "vim configuration file updated"
 fi
 
-#read the new configure file
-source /home/$usr/.bashrc
-source /home/$usr/.vimrc
-
+# tips
+echo "run: source .bashrc"
+echo "run: source .vimrc"

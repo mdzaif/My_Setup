@@ -26,3 +26,31 @@ sudo apt-get install --reinstall alsa-base pulseaudio
 ```bash
 sudo alsa force-reload
 ```
+
+<b> Setup avro bangla: </b> <br>
+
+1. Install 'Avro Phonetic' from App Center. <br>
+
+2. Now Settings > Keyboard. Under Input Source click '+ Add Input Source...' then search avro, click other select 'Avro Phonetic' then save the change. <br>
+
+<b> Setup fonts: </b>
+
+1. Download the font_back.zip file & extract it <br>
+
+3. Create a directory at /usr/share/fonts/
+
+```bash
+sudo mkdir /usr/share/fonts/TTF
+```
+
+2. Copy all files inside the extracted directory to /usr/share/fonts/TTF/
+
+```bash
+sudo cp ~/font_back/* /usr/share/fonts/TTF/
+```
+
+3. Save the changes<br>
+
+```bash
+fc-cache -f -v
+```

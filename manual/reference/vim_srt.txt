@@ -83,3 +83,12 @@ bash command:
 vim -o <file_names>  = use for open files wih horizontal split
 vim -O <file_names> = use for open files with vertical split
 suggestion Ctrl+N
+
+duplicate lines:
+:t
+for more visit :help :t
+
+Help:
+:help :<key>
+
+

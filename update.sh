@@ -12,7 +12,7 @@ sleep  5
 clear
 
 #flatpak update
-if [ $(flatpak --version > /dev/null && echo $?) -eq 0 ];then
+if [[ $(command -v flatpak > /dev/null && echo $?) == 0 ]]; then
   echo "Check flatpak packages..."
   sleep 5
   clear

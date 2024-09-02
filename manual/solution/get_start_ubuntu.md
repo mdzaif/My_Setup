@@ -117,8 +117,19 @@ ExecStart=/usr/sbin/powertop --auto-tune
 WantedBy=multi-user.target
 ```
 <p> Exit and save the change with vim: </p> 
-Then type <b>:wq</b> then press <b>Enter</b>. <br>
+<p>Then type <b>:wq</b> then press <b>Enter</b>.</p> <br>
 
+Reload systemd
+
+```bash
+sudo systemctl daemon-reload
+```
+
+Enable powertop.service
+
+```bash
+sudo systemctl enable powertop.service
+```
 
 <br><br><b> Reference </b>
 

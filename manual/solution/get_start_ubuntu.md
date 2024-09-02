@@ -54,3 +54,78 @@ sudo cp ~/font_back/* /usr/share/fonts/TTF/
 ```bash
 fc-cache -f -v
 ```
+
+<b> Intall powertop (laptop power saving)</b>
+
+<p> Powertop required following components: </p>
+
+<ul>
+    <li> Development Tools such as C++, g++, libstdc++, autoconf, automake, and libtool.</li>
+    <li>In addition to the above, it also requires pciutils-devel, ncurses-devel, and libnl-devel components.</li>
+    <li>kernel version => 2.6.38</li>
+</ul>
+
+ Installing reequired libraries: 
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install build-essential autoconf automake libtool
+```
+```bash
+sudo apt install libpci-dev libncurses-dev libnl-3-dev libnl-genl-3-dev
+```
+
+Now, install powertop on your laptop
+
+```bash
+sudo apt install powertop
+```
+
+<b> Start powertop </b>
+
+```bash
+sudo powertop --calibrate
+```
+
+```bash
+sudo powertop --auto-tune
+```
+
+<p> Setup powertop --auto-tune as startup </b>
+
+Open your terminal & type:
+
+```bash
+sudo vim /etc/systemd/system/powertop.service
+```
+
+Now, copy and paste those lines: 
+
+```bash
+[Unit]
+Description=PowerTOP auto tune
+
+[Service]
+Type=idle
+Environment="TERM=dumb"
+ExecStart=/usr/sbin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
+```
+<p> Exit and save the change with vim: </p> 
+Then type <b>:wq</b> then press <b>Enter</b>. <br>
+
+
+<br><br><b> Reference </b>
+
+1. <a href='https://github.com/fenrus75/powertop'>powertop github repo</a>
+
+2. <a href='https://forums.linuxmint.com/viewtopic.php?t=232654'>Powertop AUto tune on boot system d</a>
+
+
+
+

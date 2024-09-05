@@ -26,5 +26,5 @@ fi
 echo "Check snap packages..."
 sleep 5
 clear
-snap refresh
+sudo snap refresh
 echo "Exit status: $?"

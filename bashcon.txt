@@ -1,18 +1,34 @@
 #some aliases
-alias time='/usr/bin/time -f"---------------\n---------------\nJob %C\nCPU Percentage %P\nReal Time %es\nUser Time %Us\nSystem Time %Ss\nExit Status %x\n---------------\n---------------" '
-alias wt='curl wttr.in'
-alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
-alias info="curl -s https://raw.githubusercontent.com/mdzaif/Shell_Scripting/main/sys_info.sh | bash" 
-alias ssha='eval $(ssh-agent) && ssh-add'
-alias ssh_key='ssh-keygen -t ed25519 -C'
 alias doc='cd Documents'
 alias down='cd Downloads'
-alias update='sudo apt udpate && sudo apt dist-upgrade'
-alias gcol='git clone'
-alias gpus='git branch -M main && git push -u origin main'
-alias gstat='git status'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gch='git checkout'
+alias gchdlt='git reset --hard'
+alias gcsdlt='git reset --soft'
+alias glog='git log'
+alias gpull='git pull'
+alias gpush='git push'
+alias grep='grep --color=auto'
+alias gst='git status'
+alias info='curl -s https://raw.githubusercontent.com/mdzaif/Shell_Scripting/main/sys_info.sh | bash'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias pact='source venv/bin/activate'
+alias pdact='deactivate'
+alias penv='virtualenv -p /usr/bin/python3 venv'
 alias pyrun='time python3'
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -'
+alias ssh_key='ssh-keygen -t ed25519 -C'
+alias ssha='eval $(ssh-agent) && ssh-add'
+alias time='/usr/bin/time -f"---------------\n---------------\nJob %C\nCPU Percentage %P\nReal Time %es\nUser Time %Us\nSystem Time %Ss\nExit Status %x\n---------------\n---------------" '
 alias upd='curl -s https://raw.githubusercontent.com/mdzaif/My_Setup/main/update.sh | bash'
+alias wt='curl wttr.in'
+
 #some functions
 crun() {
 	if [ $# -lt 1 ]; then
@@ -63,3 +79,57 @@ con(){
         mogrify -format $1 $2
 }
 
+gcol(){
+  
+  if [ $# -lt 2 ]; then
+    echo "Usage: gcol <user_name> <repo_name>"
+    return 1
+  fi
+
+  git clone git@github.com:$1/$2.git
+}
+
+# Function to fetch Git branch or tag
+git_branch() {
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null)
+    
+    # Check if in the middle of a merge
+    if [ -f .git/MERGE_HEAD ]; then
+        branch="$branch (MERGING)"
+    fi
+    
+    echo "$branch"
+}
+
+# Function to check uncommitted changes
+git_dirty() {
+    if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+        echo "*"
+    fi
+}
+
+# Function to check commits ready to push
+git_push() {
+    local status
+    status=$(git status -sb 2>/dev/null) # Get short and branch status
+    
+    if [[ $status == *"[ahead"* ]]; then
+        echo "↑"  # Arrow up means changes are ready to push
+    fi
+}
+
+# Function to declare Git prompt
+git_prompt_info() {
+    local branch dirty push
+    branch=$(git_branch)
+    dirty=$(git_dirty)
+    push=$(git_push)
+
+    if [[ -n $branch ]]; then
+        echo " ($branch$dirty$push)"
+    fi
+}
+
+# Export PS1 variable
+export PS1="\[\e[32m\]\u@\h:\w\[\e[33m\]\$(git_prompt_info)\[\e[0m\]\$ "

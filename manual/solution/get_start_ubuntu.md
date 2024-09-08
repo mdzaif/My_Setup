@@ -131,6 +131,7 @@ Enable powertop.service
 sudo systemctl enable powertop.service
 ```
 
+
 <br><br><b> Reference </b>
 
 1. <a href='https://github.com/fenrus75/powertop'>powertop github repo</a>

@@ -1,3 +1,7 @@
+## Setup Git Track At Terminal
+
+Copy & Paste that in your ~/.bashrc
+```bash
 # Function to fetch Git branch or tag
 git_branch() {
     local branch
@@ -42,4 +46,8 @@ git_prompt_info() {
 
 # Export PS1 variable
 export PS1="\[\e[32m\]\u@\h:\w\[\e[33m\]\$(git_prompt_info)\[\e[0m\]\$ "
+```
+Now, Run this:
 
+```bash
+source ~/.bashrc

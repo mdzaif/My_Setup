@@ -79,7 +79,7 @@ con(){
         mogrify -format $1 $2
 }
 
-gcol(){
+gcl(){
   
   if [ $# -lt 2 ]; then
     echo "Usage: gcol <user_name> <repo_name>"
@@ -132,4 +132,5 @@ git_prompt_info() {
 }
 
 # Export PS1 variable
-export PS1="\[\e[32m\]\u@\h:\w\[\e[33m\]\$(git_prompt_info)\[\e[0m\]\$ "
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\e[01;33m\]\$(git_prompt_info)\[\e[00m\]\$ "
+

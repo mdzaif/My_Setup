@@ -1,0 +1,95 @@
+# Requirements:
+-> Python
+-> Vs Code
+
+# Step:1 : Install plug-in
+
+-> open vscdoe
+-> vscode > market place
+
+-> install python and jupyter
+
+# Step 2: Create virtualenv
+
+-> Open your project folder in vscode
+
+-> open the powershell terminal in vscode
+
+-> type: python -m venv myenv
+
+-> if something pop-up click ok
+
+-> go to the start menu open the windows powershell with administration power.
+
+-> check you have the permission to run the script,
+
+-> So, type: get-ExecutionPolicy
+
+-> if it return with Restricted or AllSigned
+
+-> then type: set-ExecutionPolicy RemoteSigned
+
+-> it will prompt somthing type: Y
+
+-> press enter and your done close the terminal go back to the vscode.
+
+-> type: .\myenv\Scripts\activate
+
+-> now your activate the virtual env. in terminal
+
+-> Also, it will create a directory inside your project directory.
+
+-> You will need this directory name in step 3
+
+# Step 3: virtual env for your jupyter
+
+-> Again type: pip install jupyter
+
+-> type: pip install ipykernel
+
+-> type: python -m ipykernel --user --name=<that directory name> --display-name "My Env" 
+
+-> close & restart your vscode
+
+# Step 4: Set the kernel for jupyter
+
+-> open terminal and activate the virtual env by type: .\myenv\Scripts\acitvate
+
+-> open .ipynb file and then open command plate in vscode (Ctrl + Shift + P)
+
+-> type: Notebook: Select Notebook Kernel
+
+-> click ok, then you will see My Env, because i use My Env as display name, it will different if you give another name.
+
+# Step 5: Testing & Ending
+
+-> Now type this code to check that your all ok 
+
+import sys
+print(sys.excutable)
+
+-> if output is like: path\of\your\project\myenv\Scripts\python.exe
+
+-> then your all right
+
+1. Why we need virtual environment?
+
+-> because for it's lightweight, safe and many more. Because, system wide library
+installation is not a good choice.
+
+2. How to list which library i have under the virtual environment?
+
+-> Open terminal activate virtual env. then type: pip list
+-> You can also store this information for future quick setup
+-> just type: pip freeze > requirement.txt
+-> the upper command create the a file in current directory and store the
+info.
+-> To view the content type: get-content requirement.txt
+-> for future setup just create virtual environment, then activate it, then
+type: pip instll -r requrement.txt
+-> I already provide my current requiremnt.txt in this folder.
+---------------------------------------------------------
+Happy Coding :)
+
+#END
+

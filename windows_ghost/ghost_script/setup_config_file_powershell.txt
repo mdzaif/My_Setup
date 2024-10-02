@@ -1,0 +1,43 @@
+# Create a $PROFILE file
+
+1. open powershell
+
+2. check this path is exists: C:\Users\<YourUserName>\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+
+3. To check type: Test-Path -Path $(Split-Path -Parent $PROFILE)
+
+4. If output is False, then type: New-Item -Type Directory -Path $(Split-Path -Parent $PROFILE)
+  - then type: New-Item -Type File -Path $PROFILE -Force
+
+5. If you already know about $PROFILE file so skip 4. because you already create it :)
+
+6. run: notepad $PROFILE
+
+7. Now you can create aliaes and function which you want to need!
+
+Here is my aliases and function:
+
+New-Alias -Name help -Value Get-Help
+function mycat{
+	param (
+		[string]$fl
+	)
+	Get-Content $fl | ForEach-Object { "{0}: {1}" -f ($_.ReadCount), $_ }
+}
+
+function fnp { 
+	param (
+		[string]$path
+	)
+	Test-Path -Path $path
+	}
+function gstat { git status }
+function gcol { git clone }
+function gcom { git commit }
+
+
+9. it is a basic only. just follow the step and create your own.
+
+Happy coding :)
+---------------------------------------
+#END

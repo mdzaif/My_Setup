@@ -112,3 +112,6 @@ Now, change the commented line.<br>
             self.setPalette(pal)
         p.end()
 ```
+
+3. Scrolling issues:
+<br> Change the commented line: 

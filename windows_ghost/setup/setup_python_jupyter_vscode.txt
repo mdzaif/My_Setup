@@ -86,8 +86,9 @@ installation is not a good choice.
 info.
 -> To view the content type: get-content requirement.txt
 -> for future setup just create virtual environment, then activate it, then
-type: pip instll -r requrement.txt
+type: pip instll -r requirement.txt
 -> I already provide my current requiremnt.txt in this folder.
+    github Link: https://github.com/mdzaif/My_Setup/blob/main/windows_ghost/setup/requirement.txt
 ---------------------------------------------------------
 Happy Coding :)
 

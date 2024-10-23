@@ -47,7 +47,7 @@
 
 -> type: pip install ipykernel
 
--> type: python -m ipykernel --user --name=<that directory name> --display-name "My Env" 
+-> type: python -m ipykernel install --user --name=<that directory name> --display-name "My Env" 
 
 -> close & restart your vscode
 

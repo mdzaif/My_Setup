@@ -1,0 +1,18 @@
+## Written by: Md. Zaif Imam Mahi
+## Description: Steps for cloning multiple remote repositories
+
+1. First, clone the repository
+	--> for ssh: git clone git@github.com:<user>/<repo>.git
+	--> for https: git clone https://github.com/<user>/<repo>.git
+
+2. Second, check the git remote branch.
+	--> git branch -r
+
+3. Third, track those branch which you want to clone
+	--> git branch --track <branch_name> <copy the listed name of the branch>
+
+4. Your done! check the branch
+	--> git checkout <branch_name>
+
+-------------------------------
+#End

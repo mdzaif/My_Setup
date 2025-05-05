@@ -31,8 +31,56 @@ sudo systemctl enable postgresql
 
 5. Install Wkhtmltopdf
 
+First, check your pc architecture and code name of your pc:
+
+| Architecture      | Common Names/Equivalent Terms       | Usage Context                            | Notes                                                                 |
+|--------------------|--------------------------------------|------------------------------------------|-----------------------------------------------------------------------|
+| **i386**           | x86, IA-32, x86_32                   | Legacy 32-bit x86 systems                | Original 32-bit Intel architecture (80386). Mostly obsolete today.   |
+| **x86_64**         | AMD64, x64, Intel 64                 | Modern 64-bit x86 systems                | 64-bit extension of x86 (backward-compatible with i386).             |
+| **IA-64**          | Itanium                              | Server/enterprise systems                | Intel’s non-x86 64-bit architecture (unrelated to x86_64/AMD64).     |
+| **ARMv7**          | armhf, armv7l, armel (soft-float)    | 32-bit ARM devices (e.g., Raspberry Pi)  | 32-bit ARM architecture. "armhf" = hard-float optimized.             |
+| **AArch64**        | ARM64, armv8, arm64                  | 64-bit ARM devices (e.g., Apple Silicon) | Modern 64-bit ARM architecture. Linux uses `arm64`, Debian `aarch64`.|
+| **RISC-V**         | RV32 (32-bit), RV64 (64-bit)         | Embedded systems, experimental hardware | Open-source RISC architecture.                                       |
+| **MIPS**           | mips (32-bit), mips64 (64-bit)       | Routers, embedded systems                | Common in networking hardware.                                       |
+| **PowerPC**        | ppc (32-bit), ppc64/ppc64le (64-bit) | Older Macs, IBM servers, consoles        | `ppc64le` = Little-endian (e.g., IBM POWER systems).                 |
+
+To, do that type those following command
+
 ```bash
-sudo apt install wkhtmltopdf -y
+uname -m
+```
+
+Here, check the architecture from the given list check the `Common Names/Equivalent Terms` for better understanding, and now type that command given below:
+
+```bash
+cat /etc/os-release
+```
+
+You will see like that,
+
+<img src="refs/c.PNG"></img>
+
+You need the `VERSION_CODENAME` and `ID`. Sometimes you did not able to see the `VERSION_CODENAME` is not found in the relase list <a href="https://github.com/wkhtmltopdf/packaging/releases/tag/0.12.6.1-3"> here</a>. So, you just collect the latest release which suit for you.
+
+Ok, now visit that <a href="https://github.com/wkhtmltopdf/packaging/releases/tag/0.12.6.1-3"> link </a>, chose your package. and right-click on it copy link go back to terminal and then type:
+
+```bash
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_amd64.deb # link maybe different as per your end. 
+```
+
+```bash
+# wait for download then type
+sudo dpkg -i wkhtmltox_0.12.6.1-3.jammy_amd64.deb
+```
+
+```bash
+# solve the installation error
+sudo apt isntall -f
+```
+
+```bash
+# then complete the installation
+sudo dpkg -i wkhtmltox_0.12.6.1-3.jammy_amd64.deb
 ```
 
 6. Create odoo database user

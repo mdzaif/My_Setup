@@ -247,6 +247,29 @@ WHERE pg_stat_activity.datname = 'odoo';
 DROP DATABASE odoo;
 ```
 
+## For odoo Devlopment
+
+1. Create odoo user like this
+
+```bash
+sudo su - postgres
+```
+
+```bash
+psql
+```
+
+```bash
+CREATE ROLE db_username WITH LOGIN NOSUPERUSER CREATEDB NOCREATEROLE INHERIT REPLICATION NOBYPASSRLS CONNECTION LIMIT -1 PASSWORD 'db_user_pass';
+COMMENT ON ROLE odoo_dev_db_user IS 'give you description here'
+```
+
+2. Check user is created.
+
+```bash
+\du+
+```
+
 # Ref:
 
 Odoo github: `https://github.com/odoo/odoo`

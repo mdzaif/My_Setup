@@ -186,10 +186,75 @@ sudo systemctl enable --now odoo
 sudo systemctl status odoo
 ```
 
-15. Final setp (access odoo):
+15. Test (access odoo):
 <p> http://< your-server-ip >:8069 </p>
 
+16. Setup odoo as nginx web server:
 
+```bash
+# Install nginx web server on your system
+sudo apt update
+sudo apt install nginx -y
+```
+
+```bash
+# Configure the nginx for odoo. Open this file:
+sudo nano /etc/nginx/sites-available/odoo
+```
+
+```ini
+#odoo server
+upstream odoo {
+server 127.0.0.1:8069;
+}
+upstream odoochat {
+server 127.0.0.1:8072;
+}
+
+
+server {
+listen 80;
+server_name add_your_server_domain also_subdomain if_you_have_only_ip_then_just_add_the_ip;
+
+proxy_read_timeout 720s;
+proxy_connect_timeout 720s;
+proxy_send_timeout 720s;
+
+
+# Add Headers for odoo proxy mode
+proxy_set_header X-Forwarded-Host $host;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header X-Real-IP $remote_addr;
+
+# log
+access_log /var/log/nginx/odoo.access.log;
+error_log /var/log/nginx/odoo.error.log;
+
+# Redirect requests to odoo backend server
+location / {
+proxy_redirect off;
+proxy_pass http://odoo;
+}
+location /longpolling {
+proxy_pass http://odoochat;
+}
+
+# common gzip
+gzip_types text/css text/less text/plain text/xml application/xml application/json application/javascript;
+gzip on;
+
+
+client_body_in_file_only clean;
+client_body_buffer_size 32K;
+client_max_body_size 500M;
+sendfile on;
+send_timeout 600s;
+keepalive_timeout 300;
+}
+```
+
+17. Access odoo: type your server domain or ip on url bar.
 ## Enable Firewall
 
 1. Make sure you have also access to the ssh
@@ -273,3 +338,5 @@ COMMENT ON ROLE odoo_dev_db_user IS 'give you description here'
 # Ref:
 
 Odoo github: `https://github.com/odoo/odoo`
+
+odoo nginx server template: `https://github.com/odoomates/odoosamples/blob/main/odoo_nginx_conf`

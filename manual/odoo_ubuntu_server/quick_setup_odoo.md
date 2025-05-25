@@ -56,7 +56,7 @@ Here, check the architecture from the given list check the `Common Names/Equival
 cat /etc/os-release
 ```
 
-You will see like that,
+You will see this,
 
 <img src="refs/c.PNG"></img>
 

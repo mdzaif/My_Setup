@@ -130,9 +130,9 @@ Get-Service -Name "postgresql*" | Select-Object Name, Status, StartType
 python odoo-bin -c odoo.conf
 ```
 
-22. Now, check the `odoo.log` file. If don't see any issues. Then, go to the browser and type localhost:8069 or localhost:custom_port
+22. Now, check the `odoo.log` file. If you don't see any issues. Then, go to the browser and type `localhost:8069` or `localhost:custom_port`.
 
-23. Ok again check the log if you face any error creating database and other task. If everything is fine your almost done.
+23. Ok again check the log file, for run time error. If everything is fine your almost done.
 
 24. For development now create `.vscode` directory inside `odoo` directory. Then in `.vscode` create `launch.json` file. Then copy and paste those line in that file.
 

@@ -3,6 +3,8 @@
 
 Description: move wayland to x11
 
+OS: Ubuntu.
+
 # Setps
 
 1. Navigate this file:

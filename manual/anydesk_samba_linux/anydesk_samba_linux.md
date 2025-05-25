@@ -2,7 +2,8 @@
 
 ## Get Started
 
-Samba use for file sharing and anydesk use for remote access your pc. You can use chrome remote desktop but I suggest use anydesk.
+Samba use for file sharing and anydesk use for remote access your pc. You can use chrome remote desktop but I suggest use anydesk, also you can use sftp instead of samba.
+I suggest sftp for security. Here, is an update anydesk is not support wayland so make sure your host system in x11. <a href="https://github.com/mdzaif/My_Setup/blob/main/manual/solution/back_to_x11.md">How to go x11?</a>
 
 
 ## Install Samba

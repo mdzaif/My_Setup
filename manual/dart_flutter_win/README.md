@@ -18,9 +18,9 @@
 
 ### Android Studio
 
-Navigate where you downlaod the `.exe` file. Now, run it as administrator. keep them as default. Ok, take times to install.then keep settings in default and click finish and wait for installation, if installation process is crashed then pop up comes click retry. Then close all. You can restart your pc. After that, search android studio and open it.<br>
+Navigate where you downlaod the `.exe` file. Now, run it as administrator. keep them as default. Ok, take times to install.then keep settings in default and click finish and wait for installation, if installation process is crashed then pop up comes click retry. wait for complete then everything is done `Finish` button will available click it. Remeber that retry will pop up multiple times if your network is slow. Then close all. You can restart your pc. After that, search android studio and open it.<br>
 
-Now go to `More Action` > `SDK Manager`. It will open Android SDK window go `SDK Tools` Tab then check those three: `Android SDK Command-line Tools(latest)`, `NDK`, `cMake` and click apply accept the term and the install will complete soon. Ok, now go `SDK platforms` this is optional but `sometimes you face some errors. So, try to check some platforms which have new api levels like 31, 32, 34, and 35`. click apply and install them. But if you face still have errors while development! then AI will guide you what you need. ok, I'm not going to close it here.
+Now go to `More Action` > `SDK Manager`. It will open Android SDK window go `SDK Tools` Tab then check those three: `Android SDK Command-line Tools(latest)`, `NDK`, `cMake` and click apply accept the term and the install will complete soon. Ok, now go `SDK platforms` this is optional but `sometimes you face some errors. So, try to check some platforms which have new api levels like 31, 32, 34, and 35`. click apply and install them. But if you face still have errors while development! then AI will guide you what you need. ok, I'm going to close it here.
 
 ## Environment Path
 
